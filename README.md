@@ -112,7 +112,7 @@ dqaligner_saliency
 - `obj`：目标存在置信度。
 - `cls`：类别预测，本项目多数实验为单类别红外小目标。
 
-预测阶段统一经过：
+预测阶段统一经过：Decode 将模型推理输出的 reg 分支偏移编码值还原为原图真实坐标，同时解析 obj、cls 分支数据，计算每个检测框的置信度与预测类别；随后依据置信阈值过滤无效预测框，再执行 NMS 剔除同一目标的重复检测框，最后将结果统一转换为 COCO 标准检测 JSON 文件。
 
 ```text
 decode outputs -> confidence filtering -> NMS -> COCO detection json
