@@ -78,9 +78,7 @@ Saliency 模式更强调原网络的显著性响应或 mask-like 输出路径。
 概念形式：
 
 ```text
-Saliency / mask-oriented feature
-    -> detection head
-    -> bbox predictions
+Saliency / mask-oriented feature     -> detection head    -> bbox predictions
 ```
 
 特点：
